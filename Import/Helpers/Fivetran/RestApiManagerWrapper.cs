@@ -10,6 +10,7 @@ public class RestApiManagerWrapper(RestApiManager restApiManager, string groupId
     public void Dispose()
     {
         this.RestApiManager.Dispose();
-        GC.SuppressFinalize(this);
+        //I think GC.SuppressFinalize(this) could be removed as there is no finilizer for RestApiManagerWrapper
+        //GC.SuppressFinalize(this);
     }
 }
